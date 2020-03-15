@@ -80,6 +80,7 @@ namespace Accounting
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IBankRepository, BankRepository>();
 
+            services.AddCors();
             services.AddMvc();
             services.AddApiVersioning(o =>
             {
@@ -103,10 +104,16 @@ namespace Accounting
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
+                app.UseDatabaseErrorPage();
             }
 
-            // Add a custom Jwt Provider to generate Tokens
-            // app.UseJwtProvider();
+            // global cors policy
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
             app.UseAuthentication();
             app.UseMvc();
 
