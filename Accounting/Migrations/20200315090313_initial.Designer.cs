@@ -11,8 +11,8 @@ using System;
 namespace Accounting.Migrations
 {
     [DbContext(typeof(AccountingContext))]
-    [Migration("20200315074713_AddCustomerTypeTable")]
-    partial class AddCustomerTypeTable
+    [Migration("20200315090313_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,7 +72,7 @@ namespace Accounting.Migrations
 
                     b.HasKey("Code");
 
-                    b.ToTable("CutomerType");
+                    b.ToTable("CustomerTypes");
                 });
 
             modelBuilder.Entity("Accounting.Models.User", b =>

@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Accounting.Data;
 using Accounting.Infrastructure.Core;
-using Accounting.Migrations;
+using Accounting.Infrastructure.Data;
 using Accounting.Models;
 using Accounting.Repositories;
 using Accounting.Services;
@@ -79,6 +79,7 @@ namespace Accounting
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IBankRepository, BankRepository>();
+            services.AddScoped<ICustomerTypeRepository, CustomerTypeRepository>();
 
             services.AddCors();
             services.AddMvc();
@@ -91,6 +92,7 @@ namespace Accounting
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Bank, BankViewModel>();
+                cfg.CreateMap<CustomerType, CustomerTypeViewModel>();
             });
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);

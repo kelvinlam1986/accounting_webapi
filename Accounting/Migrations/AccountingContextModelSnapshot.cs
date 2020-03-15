@@ -71,7 +71,7 @@ namespace Accounting.Migrations
 
                     b.HasKey("Code");
 
-                    b.ToTable("CutomerType");
+                    b.ToTable("CustomerTypes");
                 });
 
             modelBuilder.Entity("Accounting.Models.User", b =>

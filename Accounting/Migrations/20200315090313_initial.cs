@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Accounting.Migrations
 {
-    public partial class AddIdentityTables : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,6 +49,39 @@ namespace Accounting.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Banks",
+                columns: table => new
+                {
+                    Code = table.Column<string>(type: "char(3)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    CreatedBy = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(30)", nullable: false),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                    UpdatedDate = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Banks", x => x.Code);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CustomerTypes",
+                columns: table => new
+                {
+                    Code = table.Column<string>(type: "char(3)", nullable: false),
+                    CreatedBy = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(30)", nullable: false),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                    UpdatedDate = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CustomerTypes", x => x.Code);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -66,7 +99,7 @@ namespace Accounting.Migrations
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -87,7 +120,7 @@ namespace Accounting.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -107,7 +140,7 @@ namespace Accounting.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -125,13 +158,13 @@ namespace Accounting.Migrations
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_AspNetUserRoles_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -151,7 +184,7 @@ namespace Accounting.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -210,6 +243,12 @@ namespace Accounting.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Banks");
+
+            migrationBuilder.DropTable(
+                name: "CustomerTypes");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

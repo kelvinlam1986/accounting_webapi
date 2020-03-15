@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Accounting.Migrations
+namespace Accounting.Infrastructure.Data
 {
     public class DbInitializer
     {
@@ -53,7 +53,31 @@ namespace Accounting.Migrations
                     context.SaveChanges();
                 }
             }
-        }
 
+            if (!context.CustomerTypes.Any())
+            {
+                var customerTypes = new List<CustomerType>
+                    {
+                        new CustomerType {
+                            Code = "001",
+                            Name = "Khách hàng công ty",
+                            CreatedBy = "admin",
+                            CreatedDate = new DateTime(2019, 12, 8, 12, 0, 0),
+                            UpdatedBy = "admin",
+                            UpdatedDate = new DateTime(2019, 12, 8, 12, 0, 0)
+                        },
+                        new CustomerType {
+                            Code = "002",
+                            Name = "Khách hàng lẻ",
+                            CreatedBy = "admin",
+                            CreatedDate = new DateTime(2019, 12, 8, 12, 0, 0),
+                            UpdatedBy = "admin",
+                            UpdatedDate = new DateTime(2019, 12, 8, 12, 0, 0)
+                        }
+                    };
+                context.CustomerTypes.AddRange(customerTypes);
+                context.SaveChanges();
+            }
+        }
     }
 }

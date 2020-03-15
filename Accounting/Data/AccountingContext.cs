@@ -12,7 +12,7 @@ namespace Accounting.Data
         }
 
         public DbSet<Bank> Banks { get; set; }
-        public DbSet<CustomerType> CutomerType { get; set; }
+        public DbSet<CustomerType> CustomerTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
