@@ -1,0 +1,12 @@
+D:\AccountingApi\Accounting\Accounting\bin\Debug\netcoreapp2.0\Accounting.deps.json
+D:\AccountingApi\Accounting\Accounting\bin\Debug\netcoreapp2.0\Accounting.runtimeconfig.json
+D:\AccountingApi\Accounting\Accounting\bin\Debug\netcoreapp2.0\Accounting.runtimeconfig.dev.json
+D:\AccountingApi\Accounting\Accounting\bin\Debug\netcoreapp2.0\Accounting.dll
+D:\AccountingApi\Accounting\Accounting\bin\Debug\netcoreapp2.0\Accounting.pdb
+D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.csproj.CoreCompileInputs.cache
+D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.AssemblyInfoInputs.cache
+D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.AssemblyInfo.cs
+D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.dll
+D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.pdb
+D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.csprojResolveAssemblyReference.cache
