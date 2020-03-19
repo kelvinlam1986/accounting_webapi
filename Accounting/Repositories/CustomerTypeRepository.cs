@@ -17,7 +17,7 @@ namespace Accounting.Repositories
 
         public bool CheckExistingCode(string code)
         {
-            return this._context.Banks.Any(x => x.Code == code);
+            return this._context.CustomerTypes.Any(x => x.Code == code);
         }
 
         public bool CheckExistingName(string code, string name)
