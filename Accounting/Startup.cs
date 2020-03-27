@@ -80,6 +80,7 @@ namespace Accounting
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IBankRepository, BankRepository>();
             services.AddScoped<ICustomerTypeRepository, CustomerTypeRepository>();
+            services.AddScoped<IReceiptTypeRepository, ReceiptTypeRepository>();
 
             services.AddCors();
             services.AddMvc();
@@ -93,6 +94,7 @@ namespace Accounting
             {
                 cfg.CreateMap<Bank, BankViewModel>();
                 cfg.CreateMap<CustomerType, CustomerTypeViewModel>();
+                cfg.CreateMap<ReceiptType, ReceiptTypeViewModel>();
             });
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);

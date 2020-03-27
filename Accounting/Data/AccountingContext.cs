@@ -13,6 +13,8 @@ namespace Accounting.Data
 
         public DbSet<Bank> Banks { get; set; }
         public DbSet<CustomerType> CustomerTypes { get; set; }
+        public DbSet<ReceiptType> ReceiptTypes { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
