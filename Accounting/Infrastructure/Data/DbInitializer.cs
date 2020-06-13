@@ -78,6 +78,35 @@ namespace Accounting.Infrastructure.Data
                 context.CustomerTypes.AddRange(customerTypes);
                 context.SaveChanges();
             }
+
+            if (!context.ReceiptTypes.Any())
+            {
+                var receiptTypes = new List<ReceiptType>
+                    {
+                        new ReceiptType {
+                            Code = "001",
+                            ReceiptTypeInVietnamese = "Thu tiền nợ khách hàng",
+                            ReceiptTypeInSecondLanguage = "Customer Receipt",
+                            ShowReceiptTypeInVietNamese = true,
+                            CreatedBy = "admin",
+                            CreatedDate = new DateTime(2019, 12, 8, 12, 0, 0),
+                            UpdatedBy = "admin",
+                            UpdatedDate = new DateTime(2019, 12, 8, 12, 0, 0)
+                        },
+                        new ReceiptType {
+                            Code = "002",
+                            ReceiptTypeInVietnamese = "Thu tiền nội bộ",
+                            ReceiptTypeInSecondLanguage = "Internal Receipt",
+                            ShowReceiptTypeInVietNamese = true,
+                            CreatedBy = "admin",
+                            CreatedDate = new DateTime(2019, 12, 8, 12, 0, 0),
+                            UpdatedBy = "admin",
+                            UpdatedDate = new DateTime(2019, 12, 8, 12, 0, 0)
+                        }
+                    };
+                context.ReceiptTypes.AddRange(receiptTypes);
+                context.SaveChanges();
+            }
         }
     }
 }
