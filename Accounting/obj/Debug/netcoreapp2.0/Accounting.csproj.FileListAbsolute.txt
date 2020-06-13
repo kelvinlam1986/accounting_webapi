@@ -9,4 +9,3 @@ D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.Assemb
 D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.AssemblyInfo.cs
 D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.dll
 D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.pdb
-D:\AccountingApi\Accounting\Accounting\obj\Debug\netcoreapp2.0\Accounting.csprojAssemblyReference.cache
