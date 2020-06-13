@@ -11,9 +11,10 @@ using System;
 namespace Accounting.Migrations
 {
     [DbContext(typeof(AccountingContext))]
-    partial class AccountingContextModelSnapshot : ModelSnapshot
+    [Migration("20200613074801_AddReceiptBatch")]
+    partial class AddReceiptBatch
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
