@@ -107,6 +107,35 @@ namespace Accounting.Infrastructure.Data
                 context.ReceiptTypes.AddRange(receiptTypes);
                 context.SaveChanges();
             }
+
+            if (!context.ReceiptBatches.Any())
+            {
+                var receiptBatches = new List<ReceiptBatch>
+                {
+                    new ReceiptBatch
+                    {
+                        ReceiptBatchNo = "BR00000001",
+                        ReceiptBatchDate = new DateTime(2019, 10, 10, 0, 0, 0),
+                        DescriptionInVietNamese = "Batch No created by Hang",
+                        BatchStatus = true,
+                        CreatedBy = "admin",
+                        CreatedDate = new DateTime(2019, 12, 8, 12, 0, 0),
+                        UpdatedBy = "admin",
+                        UpdatedDate = new DateTime(2019, 12, 8, 12, 0, 0),
+                    },
+                    new ReceiptBatch
+                    {
+                        ReceiptBatchNo = "BR00000002",
+                        ReceiptBatchDate = new DateTime(2019, 10, 10, 0, 0, 0),
+                        DescriptionInVietNamese = "Batch No created by Nga",
+                        BatchStatus = false,
+                        CreatedBy = "admin",
+                        CreatedDate = new DateTime(2019, 12, 8, 12, 0, 0),
+                        UpdatedBy = "admin",
+                        UpdatedDate = new DateTime(2019, 12, 8, 12, 0, 0),
+                    }
+                };
+            }
         }
     }
 }
